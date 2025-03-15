@@ -1,0 +1,77 @@
+//Aquí colocamos la segunda interfaz, la cual va a ser para los dueños de la pagina donde van a implementar nuevos productos.
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+//Creamos el linearLayout y colocamos las mismas caracteristicas que en la interfaz pedidos.
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        //a partir de aquí colocamos los elementos que van a estar para un inventario.
+        <ImageView
+            android:id="@+id/imgAmigurumi"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ramo"
+            android:layout_marginTop="90dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btnSubirImagen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_200"
+            android:text="Subir Foto"/>
+
+        <EditText
+            android:id="@+id/editNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del amigurumi"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IDpedido"
+            android:inputType="number"
+            android:hint="ID del amigurumi"/>
+
+        <EditText
+            android:id="@+id/editPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Precio (MXN)"/>
+
+        <EditText
+            android:id="@+id/editDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="start"
+            android:hint="Descripción"/>
+
+        <Spinner
+            android:id="@+id/spinnerCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categorias"/>
+
+        <CheckBox
+            android:id="@+id/checkDisponible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disponible para venta inmediata"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/boton1"
+            android:text="Guardar en Inventario"/>
+
+    </LinearLayout>
+</ScrollView>
