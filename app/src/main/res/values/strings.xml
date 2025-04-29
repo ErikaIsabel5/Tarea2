@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Tarea 2</string>
-//Aquí colocamos las categorías que va a llevar nuestros spiners, podemos agregar o quitar, de acuerdo al inventario.
     <string-array name="categorias">
         <item>Animales</item>
         <item>Personajes de Anime</item>
@@ -10,5 +9,16 @@
         <item>Flores</item>
         <item>Accesorios</item>
     </string-array>
+
+    <string-array name="drawer_items">
+        <item>Menú</item>
+        <item>Pedidos</item>
+        <item>Categorias</item>
+        <item>Login</item>
+        <item>Acerca de nosotras</item>
+    </string-array>
+
 </resources>
+
+
 

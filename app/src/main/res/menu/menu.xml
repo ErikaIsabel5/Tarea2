@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".interfaces">
+
+    <item
+        android:id="@+id/action_salir"
+        android:icon="@color/purple_200"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="Ayuda" />
+    <item
+        android:id="@+id/action_salir"
+        android:icon="@color/purple_200"
+        android:orderInCategory="2"
+        android:showAsAction="ifRoom"
+        android:title="Detalles" />
+    <item
+        android:id="@+id/action_salir"
+        android:icon="@color/purple_200"
+        android:orderInCategory="3"
+        android:showAsAction="ifRoom"
+        android:title="Buscar" />
+
+</menu>

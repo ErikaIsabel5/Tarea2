@@ -1,82 +1,105 @@
-//Aquí se hace la primera interfaz, que es la de pedidos y se le muestra a los clientes
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!--Colocamos que sea un LinearLayout para que todo sea continuo y los elementos se quedan en una columna.
-    Por otro lado colocamos en el height y el width un match_parent y wrap_content, los cuales definen el ancho y alto
-    El wrap_content hace que el elemento ocupe sólo el espacio necesario para mostrar el contenido.
-    El match_parent hace que el elemento ocupe todo el ancho de su contenedor.
-    Por lo cual al no definir un valor de altura y ancho, al girar la pantalla, en horizontal, los botones o elementos
-    se van a ajustar correctamente -->
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!-- A partir de aquí colocamos los diferentes botones, textos u opciones para que el usuario interactue -->
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipo de Amigurumi:"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_500"
+            android:title="Michicrochetero06"
+            android:titleTextColor="@android:color/white"/>
 
-        <Spinner
-            android:id="@+id/spinnerCategoria"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/categorias"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp">
 
-        <RadioGroup
-            android:id="@+id/radioGroupTipo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/radioPersonalizado"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Personalizado (diseño único)"/>
-        </RadioGroup>
+                android:orientation="vertical">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/IDpedido"
-            android:inputType="number"
-            android:hint="ID del amigurumi"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Amigurumi:"/>
 
-        <EditText
-            android:id="@+id/editNombreCliente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre del cliente"/>
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/categorias"/>
 
-        <EditText
-            android:id="@+id/editCorreo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="Correo electrónico"/>
+                <RadioGroup
+                    android:id="@+id/radioGroupTipo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/radioPersonalizado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personalizado (diseño único)"/>
+                </RadioGroup>
 
-        <CheckBox
-            android:id="@+id/checkUrgente"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Entrega urgente (+$5)"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IDpedido"
+                    android:inputType="number"
+                    android:hint="ID del amigurumi"/>
 
-        <CheckBox
-            android:id="@+id/checkRegalo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Embalaje para regalo (+$3)"/>
+                <EditText
+                    android:id="@+id/editNombreCliente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del cliente"/>
 
-        <Button
-            android:id="@+id/btnConfirmarPedido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirmar Pedido"/>
+                <EditText
+                    android:id="@+id/editCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:hint="Correo electrónico"/>
 
+                <CheckBox
+                    android:id="@+id/checkUrgente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Entrega urgente (+$5)"/>
+
+                <CheckBox
+                    android:id="@+id/checkRegalo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Embalaje para regalo (+$3)"/>
+
+                <Button
+                    android:id="@+id/btnConfirmarPedido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmar Pedido"/>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:background="@android:color/white"
+        android:elevation="16dp"/>
+</androidx.drawerlayout.widget.DrawerLayout>
